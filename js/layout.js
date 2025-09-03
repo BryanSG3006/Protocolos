@@ -1,6 +1,6 @@
 // Llamado al navbar
 const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
-const navbarPath = isLocal ? "./layout/navbar.html" : "/Citas-Becas-UTN/layout/navbar.html";
+const navbarPath = isLocal ? "./layout/navbar.html" : "/Protocolos/layout/navbar.html";
 
 fetch(navbarPath)
     .then(response => response.text())
