@@ -1,6 +1,6 @@
 // Llamado al navbar
 const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
-const navbarPath = isLocal ? "./Layout/navbar.html" : "/Citas-Becas-UTN/Layout/navbar.html";
+const navbarPath = isLocal ? "./layout/navbar.html" : "/Citas-Becas-UTN/layout/navbar.html";
 
 fetch(navbarPath)
     .then(response => response.text())
@@ -31,7 +31,7 @@ fetch(navbarPath)
     .catch(error => console.error("Error cargando el navbar:", error));
 
 // Llamado al footer
-fetch('./Layout/footer.html')
+fetch('./layout/footer.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('footer-container').innerHTML = data;
