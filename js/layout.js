@@ -1,13 +1,17 @@
-// Llamado al navbar
-const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
-const navbarPath = isLocal ? "./layout/navbar.html" : "/Protocolos/layout/navbar.html";
+const basePath = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost"
+    ? "." // en local
+    : "/Protocolos"; // en GitHub Pages
 
+const navbarPath = `${basePath}/layout/navbar.html`;
+const footerPath = `${basePath}/layout/footer.html`;
+
+// Llamado al navbar
 fetch(navbarPath)
     .then(response => response.text())
     .then(data => {
         document.getElementById('navbar-container').innerHTML = data;
 
-        // Marcar el link activo según la página actual
+        // Marcar activo
         const currentPath = window.location.pathname.split("/").pop() || "index.html";
         const navLinks = document.querySelectorAll(".navbar-menu a");
 
@@ -31,7 +35,7 @@ fetch(navbarPath)
     .catch(error => console.error("Error cargando el navbar:", error));
 
 // Llamado al footer
-fetch('./layout/footer.html')
+fetch(footerPath)
     .then(response => response.text())
     .then(data => {
         document.getElementById('footer-container').innerHTML = data;
