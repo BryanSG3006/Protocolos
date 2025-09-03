@@ -1,0 +1,87 @@
+/* Footer */
+.footer {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background: var(--primary-blue);
+    color: var(--white);
+    border-radius: 0;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: center; /* Centra las columnas */
+    align-items: flex-start;
+    gap: 4rem; /* Más separación entre columnas */
+    flex-wrap: wrap;
+    max-width: 1200px; /* Ancho máximo para centrar contenido */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 0 2rem; /* Espaciado interno */
+}
+
+.contact-section p {
+    margin-bottom: 1rem; /* Espacio extra entre texto e iconos */
+}
+
+
+/* Ajuste para columnas */
+.contact-section,
+.footer-info {
+    flex: 1 1 45%; /* Cada columna ocupa casi la mitad */
+    max-width: 500px;
+}
+
+.contact-item i {
+    color: #fff; /* Ícono blanco */
+    font-size: 1.3rem;
+    background: rgba(255,255,255,0.15); /* Sutil fondo */
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.contact-item i:hover {
+    background: #fff; /* Círculo blanco */
+    color: var(--primary-blue); /* Azul del proyecto */
+}
+
+/* Columna derecha: Información institucional */
+.footer-info {
+    flex: 1 1 40%;
+    color: var(--white);
+    text-align: left;
+    padding: 2rem 1rem;
+    margin-left: auto;
+}
+
+.footer-info p {
+    opacity: 0.9;
+    margin-bottom: 0.7rem;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-section,
+    .footer-info {
+        flex: 1 1 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .contact-info {
+        justify-content: center;
+    }
+
+    .footer-info {
+        padding-top: 0;
+    }
+}

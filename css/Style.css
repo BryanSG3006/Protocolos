@@ -1,0 +1,196 @@
+/* Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Variables */
+:root {
+    --primary-blue: #1e3a8a;
+    --secondary-blue: #1e3a8a;
+    --light-blue: #dbeafe;
+    --white: #ffffff;
+    --light-gray: #f8fafc;
+    --text-gray: #64748b;
+    --border-gray: #e2e8f0;
+    --shadow-sm: 0 4px 6px rgba(30, 58, 138, 0.1);
+}
+
+/* Estilos generales */
+body {
+    font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+    background: linear-gradient(
+        135deg,
+        var(--light-blue) 0%,
+        var(--white) 50%,
+        var(--light-blue) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    padding-top: 310px; /* Compensa la altura del navbar fijo */
+}
+
+/* Contenedor base */
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Separación entre bloques */
+.separador {
+    height: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0.5rem;
+    }
+    
+    body {
+        padding-top: 120px; /* Ajuste para móviles */
+    }
+}
+
+/* Estilos adicionales para la sección de bienvenida */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: var(--white);
+    padding: 4rem 1rem;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+    margin-top: -140px; /* Compensación adicional para que el hero quede pegado al navbar */
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.objective-section {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 0 auto 3rem;
+    max-width: 1000px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-gray);
+}
+
+.section-title {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-blue);
+    border-radius: 2px;
+}
+
+.objective-content {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.objective-content p {
+    margin-bottom: 1.5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.feature-card {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-sm);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.feature-description {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .objective-section {
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-section {
+        margin-top: -100px; /* Compensación ajustada para móviles */
+        padding: 3rem 1rem;
+    }
+}
